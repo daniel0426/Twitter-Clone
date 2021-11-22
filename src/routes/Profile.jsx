@@ -21,7 +21,6 @@ const Profile = ({refreshUser, userObj}) => {
             collection(dbService, 'tweets'), 
             where('creatorId', '==', userObj.uid),
             orderBy('createdAt', 'desc')
-           
         );
         const myTweets = await getDocs(q);
         myTweets.forEach((doc)=> {

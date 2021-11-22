@@ -12,7 +12,7 @@ import TweetForm from "../components/TweetForm/TweetForm";
 
 const Home = ({ userObj }) => {
   const [tweets, setTweets] = useState([]);
-    
+
   useEffect(() => {
     const q = query(
       collection(dbService, "tweets")
