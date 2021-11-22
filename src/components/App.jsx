@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import AppRouter  from './AppRouter'
-
+import styles from './App.module.css';
 import {authService} from '../fbase';
 import {onAuthStateChanged, updateProfile} from "@firebase/auth"
 function App() {
@@ -36,7 +36,6 @@ function App() {
   return (
     <>
     {init ? <AppRouter refreshUser={refreshUser} isLoggedIn= {isLoggedIn} userObj={userObj}/> : "Initializing..."}
-   
     </>
   );
 }

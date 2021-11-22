@@ -5,8 +5,8 @@ import {
   onSnapshot,
   query,
 } from "@firebase/firestore";
-import Tweet from "../components/Tweet";
-import TweetForm from "../components/TweetForm";
+import Tweet from "../components/Tweet/Tweet";
+import TweetForm from "../components/TweetForm/TweetForm";
 
 
 

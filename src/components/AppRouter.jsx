@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Auth from "../routes/Auth";
 import Home from "../routes/Home";
 import Profile from "../routes/Profile";
-import Navigation from "./Navigation";
-import NotFound from "./NotFound";
+import Navigation from "./Navigation/Navigation";
+import NotFound from "./NotFound/NotFound";
 
 const AppRouter = ({refreshUser,  isLoggedIn, userObj }) => {
   return (

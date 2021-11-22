@@ -1,0 +1,63 @@
+.loginForm {
+    display: flex;
+    flex-direction:column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form input {
+    padding: 0.5em 1em 0.5em 0.5em;
+    border:none;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    outline:none;
+}
+.form input::placeholder {
+    font-size: 14px;
+}
+
+.submitBtn {
+   color: white;
+   letter-spacing: 1px;
+    display: block;
+    text-align: center;
+    background: #06A0FF;
+    border:none;
+    padding: 0.5em;
+    border-radius:5px;
+    outline:none;
+    cursor: pointer;
+    margin-bottom:1.5rem;
+    opacity:0.9;
+    transition: all 0.25s ease;
+}
+
+.submitBtn:hover {
+    opacity:1;
+    filter: brightness(1.1)
+}
+
+.toggleBtn {
+    padding: 0.3em 0.5em;
+align-self: flex-end;
+ border: none;
+ outline:none;
+ cursor: pointer;
+ background: white;
+ color:  #06A0FF;
+ font-size: 12px;
+ border-radius: 5px;
+
+}
+.toggleBtn:hover {
+    transform: scale(1.05);
+}
+.error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin: 2em 0;
+}

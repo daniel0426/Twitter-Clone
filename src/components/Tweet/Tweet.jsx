@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { dbService, storage } from "../fbase";
+import { dbService, storage } from "../../fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { ref, deleteObject } from "@firebase/storage";
+import styles from './Tweet.module.css'
 
 
 const Tweet = ({ tweetObj, isOwner }) => {

@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import styles from './Navigation.module.css'
+
 const Navigation = ({userObj}) => {
-    // useEffect(()=> {
-    //     if(!userObj.displayName){
-    //         userObj.displayName = 'User'
-    //     }
-    // }, [])
     return (
-       
             <nav>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
