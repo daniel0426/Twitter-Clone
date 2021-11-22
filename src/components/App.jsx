@@ -7,10 +7,10 @@ function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userObj, setUserObj] = useState(null);
- console.log(userObj);
 
   useEffect(async () => {
     onAuthStateChanged(authService, (user)=> {
+      console.log(user);
       if(user){
         setIsLoggedIn(true);
         setUserObj({

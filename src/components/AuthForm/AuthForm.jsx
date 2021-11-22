@@ -26,7 +26,7 @@ const AuthForm = () => {
         let data;
         if(newAccount){
            data = await createUserWithEmailAndPassword(authService, email, password);
-          console.log(data);
+         
        }else {
            data = await signInWithEmailAndPassword(authService, email, password)
        }

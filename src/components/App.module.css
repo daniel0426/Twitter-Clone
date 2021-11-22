@@ -1,13 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-body{
-    height: 100vh;
-    background-color: #29539b;
-background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+body {
+  height: 100vh;
+  background-color: #29539b;
+  background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
 }
