@@ -8,8 +8,8 @@ import {  useNavigate } from 'react-router'
 const Profile = ({refreshUser, userObj}) => {
     const [newDisplayName , setNewDisplayName] = useState(userObj.displayName);
 
-
     const navigate = useNavigate()
+    
     const onLogoutClick = ()=> {
         signOut(authService)
         navigate('/')
