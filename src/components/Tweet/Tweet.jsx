@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { dbService, storage } from "../../fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { ref, deleteObject } from "@firebase/storage";
+import {AiOutlineDelete, AiOutlineEdit} from 'react-icons/ai';
+import {ImCancelCircle} from 'react-icons/im';
 import styles from './Tweet.module.css'
 
 
@@ -39,32 +41,38 @@ const Tweet = ({ tweetObj, isOwner }) => {
   };
 
   return (
-    <div>
+    <div className={styles.tweet}>
       {editing ? (
         <>
-          <form onSubmit={editTweet}>
+          <form onSubmit={editTweet} className={styles.tweetEdit}>
             <input
+              className={styles.updateInput}
               type="text"
               onChange={onChange}
               value={newTweet}
               placeholder="Edit your Tweet"
+              maxLength='50'
               required
             />
-            <input type="submit" value="Update Tweet" />
+            <div className={styles.editControl}>
+              <input type="submit" value="Update"/>
+              <ImCancelCircle onClick={toggleEditing} className={styles.cancelBtn}/>
+            </div>
           </form>
-          <button onClick={toggleEditing}>Cancel</button>
+        
+          
         </>
       ) : (
         <>
           <h4>{tweetObj.text}</h4>
           {tweetObj.attachmentUrl && (
-            <img src={tweetObj.attachmentUrl} alt='profile' width="50" />
+            <img className={styles.tweetImg} src={tweetObj.attachmentUrl} alt='profile' width="50" />
           )}
           {isOwner && (
-            <>
-              <button onClick={deleteTweet}> Delete Tweet</button>
-              <button onClick={toggleEditing}> Edit Tweet</button>
-            </>
+            <div className={styles.control}>
+              <AiOutlineDelete className={`${styles.icon} ${styles.deleteBtn}`} onClick={deleteTweet}/>
+              <AiOutlineEdit className={`${styles.icon} ${styles.updateBtn}`} onClick={toggleEditing}/>
+            </div>
           )}
         </>
       )}

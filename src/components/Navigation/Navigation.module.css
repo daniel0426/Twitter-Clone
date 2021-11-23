@@ -1,0 +1,24 @@
+.nav {
+  padding: 2em;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+}
+a {
+  text-decoration: none;
+  color: #08a1fe;
+  font-size: 2rem;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user span {
+  margin-top: 1em;
+  font-size: 14px;
+}

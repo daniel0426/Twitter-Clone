@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { authService, dbService } from '../fbase'
+import styles from './Profile.module.css';
+import { authService, dbService } from '../../fbase'
 import { signOut } from '@firebase/auth'
 import { collection, query, where, getDocs, orderBy,  } from '@firebase/firestore'
 import { updateProfile } from '@firebase/auth';
@@ -46,13 +47,13 @@ const Profile = ({refreshUser, userObj}) => {
     }, [])
 
     return ( 
-        <>
-            <form onSubmit={onSubmit}>
-                <input onChange={onChange} value={newDisplayName} type="text" placeholder='Display name' />
-                <input type="submit" value="Update Profile"/>
-            </form>        
-            <button onClick={onLogoutClick}>Log out</button>
-        </>
+        <div className={styles.profile}>
+            <form onSubmit={onSubmit} className={styles.form}>
+                <input className={styles.updateInput} onChange={onChange} value={newDisplayName} type="text" placeholder='Display name' />
+                <input className={styles.updateBtn} type="submit" value="Update Profile"/>
+            </form>
+            <button className={styles.logoutBtn} onClick={onLogoutClick}>Log out</button>
+        </div>
     )
 }
 

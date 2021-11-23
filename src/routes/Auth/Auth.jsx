@@ -1,8 +1,8 @@
 import React from "react";
 import styles from './Auth.module.css'
-import { authService } from "../fbase";
+import { authService } from "../../fbase";
 import { signInWithPopup, GoogleAuthProvider, GithubAuthProvider,   } from "@firebase/auth";
-import AuthForm from "../components/AuthForm/AuthForm";
+import AuthForm from "../../components/AuthForm/AuthForm";
 
 import { FaGithub , FaGoogle} from 'react-icons/fa'
 import {BsTwitter} from 'react-icons/bs';

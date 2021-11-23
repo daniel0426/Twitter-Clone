@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import AppRouter  from './AppRouter'
 import styles from './App.module.css';
 import {authService} from '../fbase';
-import {onAuthStateChanged, updateProfile} from "@firebase/auth"
+import {onAuthStateChanged} from "@firebase/auth"
+
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);

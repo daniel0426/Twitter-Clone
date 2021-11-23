@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from './TweetForm.module.css'
 import { dbService, storage } from "../../fbase";
 import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { addDoc, collection } from "@firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
+import {GrAddCircle} from 'react-icons/gr'
+import {FiDelete} from 'react-icons/fi'
 
 const TweetForm = ({ userObj }) => {
   const [tweet, setTweet] = useState("");
   const [attachment, setAttachment] = useState("");
+  const fileInputRef = useRef();
 
   const submitTweet = async (event) => {
     event.preventDefault();
@@ -63,21 +66,34 @@ const TweetForm = ({ userObj }) => {
     setAttachment("");
   };
 
+  const onAddPhotoClick = (event)=> {
+    event.preventDefault();
+    fileInputRef.current.click();
+  }
+
   return (
-    <form onSubmit={submitTweet}>
-      <input
-        value={tweet}
-        onChange={onChangeTweet}
-        type="text"
-        placeholder="What's on your mind?"
-        maxLength={120}
-      />
-      <input type="file" accept="image/*" onChange={onFileChange} />
-      <input type="submit" value="Tweet" />
+    <form onSubmit={submitTweet} className={styles.form}>
+      <div className={styles.field}>
+        <input
+          value={tweet}
+          onChange={onChangeTweet}
+          type="text"
+          placeholder="What's on your mind?"
+          maxLength={100}
+        />
+        <input className={styles.fileInput} ref={fileInputRef} type="file" accept="image/*" onChange={onFileChange} />
+        <button type='submit'><GrAddCircle className={styles.submitIcon}/></button>
+      </div>
+      <button className={styles.addBtn} onClick={onAddPhotoClick}>+ Add Photo </button>
       {attachment && (
-        <div>
-          <img src={attachment} alt="profile" width="50px" />
-          <button onClick={onClearAttachment}>Clear</button>
+        <div className={styles.imgPreview}>
+            <img src={attachment} alt="profile" style={{
+                backgroundImage: attachment,
+              }} />
+            <div className={styles.remove} onClick={onClearAttachment}>
+              <span >Remove</span>
+              <FiDelete className={styles.deleteIcon}/>
+            </div>
         </div>
       )}
     </form>

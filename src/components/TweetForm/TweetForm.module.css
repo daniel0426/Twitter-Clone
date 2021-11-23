@@ -1,0 +1,76 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.field {
+  position: relative;
+  border: 1px solid #08a1fe;
+  border-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+}
+.field input {
+  width: 100%;
+  background: none;
+  padding: 0.5em 1em;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.field button {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+}
+.field button {
+  margin-left: 1em;
+  cursor: pointer;
+}
+.fileInput {
+  display: none;
+}
+.submitIcon {
+  font-size: 1.5rem;
+}
+
+.addBtn {
+  width: 20%;
+  margin: 1em auto 3rem auto;
+  border: none;
+  outline: none;
+  background-color: #2a4bf7;
+  color: white;
+  padding: 0.5em;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.imgPreview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imgPreview img {
+  height: auto;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.remove {
+  margin: 1em 0 2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ed5e68;
+  cursor: pointer;
+}
+.deleteIcon {
+  margin-left: 0.5em;
+  margin-top: 0.1em;
+}

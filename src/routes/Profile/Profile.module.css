@@ -1,0 +1,58 @@
+.profile {
+  width: 60%;
+  margin: 0 auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 2rem;
+}
+
+.form input {
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.updateInput {
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.updateBtn {
+  padding: 0.3em 1em;
+  font-size: 1em;
+  background-color: #08a1fe;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 2em;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+.updateBtn:hover {
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+.logoutBtn {
+  cursor: pointer;
+  width: 100%;
+  padding: 0.3em 1em;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: white;
+  margin-top: 1em;
+  border-radius: 10px;
+  background-color: #ed5e68;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.logoutBtn:hover {
+  opacity: 1;
+  filter: brightness(1.1);
+}
