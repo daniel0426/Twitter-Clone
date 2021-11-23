@@ -6,11 +6,10 @@ import {onAuthStateChanged} from "@firebase/auth"
 
 function App() {
   const [init, setInit] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userObj, setUserObj] = useState(null);
 
-  useEffect(async () => {
-    onAuthStateChanged(authService, (user)=> {
+  useEffect( () => {
+     onAuthStateChanged(authService, (user)=> {
       if(user){
         setUserObj({
           uid: user.uid,
