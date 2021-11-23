@@ -11,16 +11,14 @@ function App() {
 
   useEffect(async () => {
     onAuthStateChanged(authService, (user)=> {
-      console.log(user);
       if(user){
-        setIsLoggedIn(true);
         setUserObj({
           uid: user.uid,
           displayName : user.displayName ? user.displayName : 'User'
         });
         
       } else {
-        setIsLoggedIn(false);
+        setUserObj(null)
       }
       setInit(true); 
     })
@@ -36,7 +34,7 @@ function App() {
 
   return (
     <>
-    {init ? <AppRouter refreshUser={refreshUser} isLoggedIn= {isLoggedIn} userObj={userObj}/> : "Initializing..."}
+    {init ? <AppRouter refreshUser={refreshUser} isLoggedIn={Boolean(userObj)} userObj={userObj}/> : <p className={styles.initialization}>Initializing...</p>}
     </>
   );
 }

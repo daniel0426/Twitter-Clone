@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from './AppRouter.module.css';
 
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "../routes/Auth/Auth";
 import Home from "../routes/Home";
 import Profile from "../routes/Profile/Profile";
